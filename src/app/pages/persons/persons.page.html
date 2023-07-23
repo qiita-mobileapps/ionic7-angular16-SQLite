@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+	<ion-toolbar>
+	  <ion-title>persons</ion-title>
+	</ion-toolbar>
+</ion-header>
+  
+<ion-content padding>
+	<div>
+		<ion-item>
+		<ion-label position="stacked">Put your name</ion-label>
+		<ion-input [(ngModel)]="person.name" placeholder="Person Name"></ion-input>
+		</ion-item>
+		<ion-button expand="block" (click)="addPerson()">Add</ion-button>
+		<ion-list>
+		<ion-item button *ngFor="let item of persons" [routerLink]="['/', 'persons', item.id]">
+			<ion-label>
+			<h2>{{item.name}}</h2>
+			</ion-label>
+		</ion-item>
+		</ion-list>
+	</div>
+</ion-content>
+  

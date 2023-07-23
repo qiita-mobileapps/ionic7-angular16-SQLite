@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="persons"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Person</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="deletePerson()">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div *ngIf="person">
+    <ion-item>
+      <ion-label position="stacked">Put your name</ion-label>
+      <ion-input [(ngModel)]="person.name" placeholder="Person Name"></ion-input>
+    </ion-item>
+    <ion-button expand="block" (click)="updatePerson()">Update</ion-button>
+  </div>
+</ion-content>
